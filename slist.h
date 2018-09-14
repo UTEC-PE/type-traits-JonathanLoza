@@ -30,7 +30,7 @@ class SList {
             head = nullptr;
         };
 
-        bool find(T search, Node<T> **&pointer) {
+        bool find(T search, Node<T> **&pointer) { // El código de tu find se puede reducir
           pointer=&head;
           while(*pointer){
             if(cmp(search,(*pointer)->data)){
@@ -51,7 +51,7 @@ class SList {
             // TODO
         }
 
-        bool insert(T data) {
+        bool insert(T data) { // Hay lógica repetida
           Node<T> **pointer;
           bool x=find(data,pointer);
           if(x){
@@ -73,7 +73,7 @@ class SList {
             // TODO
         }
 
-        bool remove(T item) {
+        bool remove(T item) { // Hay lógica repetida
           Node<T> **pointer;
           bool x=find(item,pointer);
           if(!x){
@@ -105,7 +105,7 @@ class SList {
           auto* temp=head;
           while(temp)
             temp=temp->next;
-          return iterator(temp);
+          return iterator(temp); // Podría ser un iterator(nullptr)
             // TODO
         }
 
